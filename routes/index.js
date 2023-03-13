@@ -7,7 +7,8 @@ const indexController = require('../tom_controllers/index');
 
 /* GET home page. */
 router.get('/', indexController.getIndex);
-router.get('/sonagitv-all/:num*', indexController.getAllValue);
+// router.get('/sonagitv-all/:num*', indexController.getAllValue);
+router.get('/search/:name*', indexController.getSearch);
 router.get('/sonagitv-new', indexController.getNewValue);
 router.get('/*', indexController.getOther);
 

@@ -72,4 +72,10 @@ exports.getNewValue = (req, res, next) => {
 	res.send();
 };
 
+exports.getSearch = async(req, res, next) => {
+	let name = req.params.name;
+	let info = await InfoModel.find({'expand.post_title': {$regex: `.*${name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}.*`, $options: 'i'}}).exec();
+	res.send(info);
+};
+
 exports.getOther = (req, res, next) => res.redirect('/');
