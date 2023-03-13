@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= (typeof title != "undefined" ? title : "") %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= (typeof title != "undefined" ? title : "") %></h1>
+    <p>Welcome to <%= (typeof title != "undefined" ? title : "") %></p>
   </body>
 </html>
